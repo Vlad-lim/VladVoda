@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="text-con">
+    <h2>Уважаемые потребители!</h2><br>
+    <h4>Прежде чем оставить Онлайн-заявку, рекомендуем ознакомится с графиком прёма, это можно сделать по <a id = 'doc-link' href="{% url 'graph' %}">Ссылке</a></h4>
+<br><br><br>
+    <span>
+    <h1 class='tittle'>Записать на приём</h1>
+    <form method="POST" action="">
+        <div class='button'>{{ form.Position }} К сотруднику</div><br>
+        {{ form.Name }}
+        {{ form.Date }}
+        <button type='submit' class='button'>Оставить заявку</button>
+        <span>{{ status }}</span>
+        {% csrf_token %}
+    </form>
+</div>
+
+<style>
+
+        #doc-link:hover {
+            color: rgb(0, 162, 255);
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+</style>
+{% endblock %}

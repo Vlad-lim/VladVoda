@@ -1,0 +1,135 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+<div class="text-con">
+    <h1 class='tittles'>Тарифы</h1><br><br><br>
+    <h2>Производственное управление «Донецкводоканал» ГУП ДНР «ВОДА ДОНБАССА»</h2><br>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#215da7;">
+        </colgroup>
+        <tr>
+            <th>Населенный пункт</th>
+            <th>Услуга</th>
+            <th>Единица измерения</th>
+            <th>Стоимость, рос.руб</th>
+        </tr>
+        
+        {% for dn in Don %}
+        <tr>
+            <td>{{ dn.Punkt }}</td>
+            <td>
+                {% for ser in dn.Service.all %}
+                {{ ser.Service }}<br>
+                {% endfor %}
+            </td>
+            <td>{{ dn.Unit }}</td>
+            <td>{{ dn.Price }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+<br><br><br><br><br><br><br>
+
+    <h2>Производственное управление «Зугрэсводоканал» ГУП ДНР «ВОДА ДОНБАССА»</h2><br>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#215da7;">
+        </colgroup>
+        <tr>
+            <th>Населенный пункт</th>
+            <th>Услуга</th>
+            <th>Единица измерения</th>
+            <th>Стоимость, рос.руб</th>
+        </tr>
+        
+        {% for dn in Zug %}
+        <tr>
+            <td>{{ dn.Punkt }}</td>
+            <td>
+                {% for ser in dn.Service.all %}
+                {{ ser.Service }}<br>
+                {% endfor %}
+            </td>
+            <td>{{ dn.Unit }}</td>
+            <td>{{ dn.Price }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br><br><br><br><br><br>
+
+    <h2>Производственное управление «Ясиноватаяводоканал» ГУП ДНР «ВОДА ДОНБАССА»</h2><br>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#215da7;">
+        </colgroup>
+        <tr>
+            <th>Населенный пункт</th>
+            <th>Услуга</th>
+            <th>Единица измерения</th>
+            <th>Стоимость, рос.руб</th>
+        </tr>
+        
+        {% for dn in Asin %}
+        <tr>
+            <td>{{ dn.Punkt }}</td>
+            <td>
+                {% for ser in dn.Service.all %}
+                {{ ser.Service }} <br>
+                {% endfor %}
+            </td>
+            <td>{{ dn.Unit }}</td>
+            <td>{{ dn.Price }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+<br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+<style>
+    .text-con {
+        overflow-x: scroll;
+    }
+
+    .table_col {
+        font-family: Arial;
+        font-size: 16px;
+        width: 100%;
+        background: white;
+        text-align: left;
+        border-collapse: collapse;
+        color: #333333;
+        margin: 0 auto;
+
+    }
+
+    .table_col th:first-child,
+    .table_col td:first-child {
+        color: #F5F6F6;
+        border-left: none;
+    }
+
+    .table_col th {
+        font-weight: normal;
+        border-bottom: 2px solid #eeaeae;
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 8px 10px;
+    }
+
+    .table_col td {
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 12px 10px;
+        color: #8b8e91;
+    }
+</style>
+{% endblock %}

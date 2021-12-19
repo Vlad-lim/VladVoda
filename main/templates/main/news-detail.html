@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+<br><br><br>
+<div class="text-con">
+    
+    <img src="{{ new.Image.url }}" alt=""><br>
+    <h1>{{ new.Tittle }}</h1>
+    <h3>{{ new.Published }}</h3><br><br>
+    <span>{{ new.Text }}</span>
+
+</div>
+<br><br><br>
+
+{% endblock %}

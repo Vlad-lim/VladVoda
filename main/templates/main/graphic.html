@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+<div class="text-con">
+    <h1 class='tittles'>График приёма</h1>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#215da7;">
+        </colgroup>
+        <tr>
+            <th>ФИО</th>
+            <th>Должность</th>
+            <th>День приёма</th>
+            <th>Время приёма</th>
+
+        </tr>
+        {% for graph in model %}
+        <tr>
+            <td>{{ graph.Name }}</td>
+            <td>{{ graph.Position }}</td>
+
+            <td>
+                {% for day in graph.Days.all %}
+                {{ day.Day }} <br>
+                {% endfor %}
+            </td>
+
+            <td>С {{ graph.Time }} до {{ graph.TimeEnd }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<style>
+    .text-con {
+        overflow-x: scroll;
+    }
+
+    .table_col {
+        font-family: Arial;
+        font-size: 16px;
+        width: 100%;
+        background: white;
+        text-align: left;
+        border-collapse: collapse;
+        color: #333333;
+        margin: 0 auto;
+
+    }
+
+    .table_col th:first-child,
+    .table_col td:first-child {
+        color: #F5F6F6;
+        border-left: none;
+    }
+
+    .table_col th {
+        font-weight: normal;
+        border-bottom: 2px solid #eeaeae;
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 8px 10px;
+    }
+
+    .table_col td {
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 12px 10px;
+        color: #8b8e91;
+    }
+</style>
+{% endblock %}

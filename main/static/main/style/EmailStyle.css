@@ -1,0 +1,196 @@
+body{
+    font-family:'Montserrat', sans-serif;
+    margin:0;
+    background-size: 100%;
+    background: url('Img/EmailBack.jpg');
+    color: rgb(49, 49, 49);
+
+    
+}
+*{
+    box-sizing: border-box;
+}
+
+/*Header*/
+
+header{
+    width:100%;
+    height:100px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-size:20px;
+    color:rgb(27, 27, 27)
+}
+.link-container{
+    width:100%;
+    max-width: 650px;
+    display: flex;
+}
+.header-element{
+    margin:40px;
+}
+a{
+    text-decoration: none;
+    color:rgb(41, 41, 41);
+}
+.tittle{
+    z-index: 2;
+}
+
+.Card{
+    height:auto;
+    width:470px;
+    background:rgba(255, 255, 255, 0.767);
+    margin:0 auto;
+    border-radius: 25px;
+    margin-top:10vh;    
+    padding: 10px;
+    overflow: hidden;
+    animation-name: card;
+    animation-duration:4s ;
+    animation-timing-function: 	cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-delay: 500ms;
+}
+.imgContainer{
+    width:100%;
+    height:40%;
+    background-size:100%;
+    background-origin: border-box;
+    background:url("Img/3.png") center ;
+    border-radius:25px;
+    animation-name: img;
+    animation-duration:2s ;
+    margin:0 auto;
+    border-top:5px solid rgb(32, 32, 32);
+    
+}
+.element{
+    opacity: 1;
+
+    animation-name:element;
+    animation-duration: 5s;
+}
+
+
+@keyframes card{
+    10%{
+        width:100px;
+        height:100px;
+        margin-top:-100px;
+        border-radius: 50%; background: rgb(255, 255, 255);
+        z-index: 999;
+    }
+    40%{
+        width:100px;
+        height:100px;
+        border-radius: 50%; background: rgb(255, 255, 255);
+    }
+    80%{
+        width: 100px;
+        height: 100px;  background: rgb(255, 255, 255);
+        border-radius: 50%;
+        margin-top:600px;
+    }
+    90%{
+        border-radius: 50%;
+        width:200px;
+        height:200px;
+        background: rgb(255, 255, 255);
+    }
+  
+}
+@keyframes element{
+    10%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+}
+
+
+
+.textEmail{
+    width:100%;
+    height:60%;
+    border:none;
+    font-size: 18px;
+    margin-top:20px;
+    padding: 20px;
+    border-radius: 25px;
+    opacity: 1;
+    z-index: 2;
+}
+.button{
+    display: block;
+    margin:0 auto;
+    width:230px;
+    height:70px;
+    margin-top:25px;
+    color: rgb(49, 49, 49);
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
+    border:none;
+    font-size:22px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    background:white;
+    transition: 0.5s;
+    cursor:pointer;
+    z-index: 2;
+}
+.button:hover{
+    color: white;
+    background:rgb(49, 49, 49);
+    transition: 0.5s;
+}
+@media (max-width:500px){
+    header{
+        display: none;
+    }
+    .Card{
+        width:370px;
+    }
+}
+@media (max-width:350px){
+    .Card{
+        width:250px;
+        height:auto;
+    }
+}
+::-webkit-scrollbar{
+	background:rgb(32, 32, 32);
+	width:10px;
+}
+::-webkit-scrollbar-track{
+	box-shadow: 0 0 10px #1100ff;
+	border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+	background: rgb(255, 255, 255);
+	border-radius:25px;
+}
+::selection{
+	background-color: rgb(36, 36, 36);
+	color:rgb(255, 255, 255);
+}
+#error{
+    color:rgb(211, 78, 78);
+    
+}
+#sucses{
+    color:rgb(109, 235, 109);
+    
+}

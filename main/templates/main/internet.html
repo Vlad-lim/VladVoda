@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="text-con">
+    <h1>Онлайн приёмная</h1>
+    <form method="POST" action="">
+        {{ form.Name }}
+        {{ form.Number }}
+        {{ form.Adress }}
+        {{ form.Text }}
+        <button type='submit' class='button'>Отправить обращение</button><br>
+        <span>{{ status }}</span>
+        {% csrf_token %}
+    </form>
+</div>
+
+{% endblock %}

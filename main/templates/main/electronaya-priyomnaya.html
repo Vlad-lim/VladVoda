@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+    <div class="text-con">
+
+        <h1 class='tittles'>Потребителям</h1><br>
+
+    <h2>Уважаемые потребители!</h2><br>
+    <h4>Прежде чем направить электронное обращение на официальный интернет — сайт ГОСУДАРСТВЕННОГО УНИТАРНОГО ПРЕДПРИЯТИЯ ДНР «ВОДА ДОНБАССА», рекомендуем Вам ознакомиться с некоторыми нормативными правовыми документами:</h4>
+<br><br><br>
+    <span>
+        <strong>Уважаемые пользователи,  рекомендуем Вам ознакомиться с некоторыми нормативными правовыми документами:</strong><br><br><br>
+        <h3><a id = 'doc-link' href="http://www.vodadonbassa.ru/wp-content/uploads/2018/04/z13-%D0%9E%D0%B1-%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%D1%85-%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD.pdf"> Закон Донецкой Народной Республики «Об обращениях граждан»;</a><br><br><br></h3> 
+       <h3><a id = 'doc-link' href="http://www.vodadonbassa.ru/wp-content/uploads/2018/09/%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9-%D0%9E%D0%B1-%D0%BE%D0%B1%D1%80%D0%B0%D1%89.-%D0%B3%D1%80%D0%B0%D0%B6%D0%B4-%D0%BF%D0%B4%D1%84.pdf">Закон Донецкой Народной Республики «О внесении изменений в Закон ДНР «Об обращениях граждан»</a></h3> <br><br><br>
+    </span>
+    <br><br><br>
+    <span><strong>Интернет-сайт ГУП ДНР «ВОДА ДОНБАССА» является дополнительным средством для обеспечения возможности обращения граждан.</strong></span><br><br>
+    <span>Электронные обращения регистрируются в течение трех рабочих дней с момента поступления, в зависимости от сути вопроса.</span><br> <br>
+    <span>Ответы на обращения направляются на электронные адреса заявителей.</span><br><br>
+    <span>На электронные обращения граждан, оставленные без рассмотрения, ответы не предоставляются.</span><br><br><br><br>
+    <h2><a id = 'doc-link' href="http://www.vodadonbassa.ru/?page_id=838"> Правила заполнения и рассмотрения электронных обращений граждан (перейти для ознакомления)</a></h2>
+        <h1>Электронная приёмная</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class='button'>{{ form.Podrazdel }}</div><br>
+            {{ form.Name }}
+            {{ form.Adress }}
+            {{ form.Email }}
+            {{ form.Number }}
+            {{ form.Theme }}
+            {{ form.Text }}
+            <div class='button'>{{ form.File }} *Фото, видео и другие файлы</div><br>
+            <button type='submit' class='button'>Отправить</button><br><br>
+            <h2>{{ status }}</h2>
+            {% csrf_token %}
+        </form>
+    </div>
+
+
+    <style>
+        #doc-link {
+            margin: 20px 0;
+            transition: 0.5s;
+            display: block;
+        }
+
+        #doc-link:hover {
+            color: rgb(0, 162, 255);
+            text-decoration: underline;
+            transition: 0.3s;
+            margin-left: 40px;
+        }
+    </style>
+{% endblock %}

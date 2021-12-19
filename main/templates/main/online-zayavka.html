@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+    <div class="text-con">
+        <h1>Онлайн заявка на получение технических условий</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.Name }}
+            {{ form.Text }}
+            <div class='button'>{{ form.File }} *Фото, видео и другие файлы</div><br>
+            <button type='submit' class='button'>Оставить заявку</button><br><br>
+            <h2>{{ status }}</h2>
+            {% csrf_token %}
+        </form>
+    </div>
+
+{% endblock %}

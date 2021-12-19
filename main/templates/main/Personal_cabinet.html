@@ -1,0 +1,270 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="cab-container">
+        <span id = 'user'>
+        Здравствуйте <strong>{{ request.user }}</strong></span>
+        <button id = 'table-button'><a href='{% url "LogOut" %}'> Выйти </a> </button>
+        <div class="user-info">
+            <span id = 'user-num'>№101021019</span> - <strong>Золотопуп Е.А</strong> <span>Центрально-городской Макеев, кв-ГВАРДЕЙСКИЙ, д.5, кв.64</span>
+            <strong id = 'appo' >Долг 231.68</strong>
+        </div>
+
+        <div class="user-button">
+            <button>
+                Передать показания
+            </button>
+
+            <button>
+                Расшифровка начислений
+            </button>
+
+            <button>
+                Переписка с поставщиком
+            </button>
+
+            <button>
+                Квитанции
+            </button>
+
+        </div>
+
+        <h2>Расшивровка начислений и переданных показаний</h2>
+
+        Номер счётчика: <span id = 'user-num'>38844876</span>
+    </div>
+    <div class="chart">
+    <canvas id="myChart" width="300px" height="200"></canvas>
+</div>
+<br><br><br>
+
+<div class="cab-container">
+    <h1>Обороты</h1>
+<table class="table_col">
+    <colgroup>
+        <col style="background:#215da7;">
+    </colgroup>
+    <tr>
+        <th>Месяц</th>
+        <th>Кол-во чел.</th>
+        <th>Сальдо начальное, руб</th>
+        <th>Объем, м.куб</th>
+        <th>Начисленно, руб</th>
+        <th>Оплата, руб</th>
+        <th>Сальдо конечное, руб</th>
+
+    </tr>
+   
+    <tr>
+        <td>01.2021</td>
+
+        <td>1</td>
+
+        <td>867.94</td>
+
+        <td>14</td>
+
+        <td>301.70</td>
+
+        <td>301.70</td>
+
+        <td>1 169.64</td>
+
+    </tr>
+</table>
+<button id = 'table-button'>
+    Распечатать
+</button>
+</div>
+
+<div class="chart">
+    <canvas id="Bar_1" width="300px" height="200"></canvas>
+</div>
+
+<div class="cab-container nums">
+    <img id = 'hot' width='400px' src="{% static 'main/Cabinet/Горячий-счётчик.png' %}" alt="">
+    <img id = 'hot' width='430px' src="{% static 'main/Cabinet/Холодный-счётчик.png' %}" alt="">
+</div>
+
+
+    <script src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js'></script>
+    <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Январь', 'Февраль', 'Март', 'Аперель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            datasets: [{
+                label: 'Переданные показания в 2021 году',
+                data: [12, 5, 12, 5, 11, 5, 8, 1, 1, 2, 5, 3, 7],
+                backgroundColor: [
+                '#a0e7e581',
+                ],
+                borderColor: [
+                '#135ce4',
+                ],
+                borderWidth: 5
+            }]
+        },
+        options :{
+            fill:true,
+            borderJoinStyle: 'round'
+        }
+    });
+
+
+
+    const ctx_1 = document.getElementById('Bar_1').getContext('2d');
+    const Bar_1 = new Chart(ctx_1, {
+        type: 'bar',
+        data: {
+            labels: ['Январь', 'Февраль', 'Март', 'Аперель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            datasets: [{
+                label: 'Переданные показания в 2021 году',
+                data: [0, 5, 12, 5, 11, 5, 8, 1, 1, 2, 5, 3, 7],
+                backgroundColor: [
+                '#145be59a',
+                ],
+                borderColor: [
+                '#11234',
+                ],
+                borderWidth: 5
+            }]
+        },
+        options :{
+            fill:true,
+            borderJoinStyle: 'round'
+        }
+    });
+    </script>
+     
+    <style>
+        .nums{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #hot{
+            display:block;
+            margin:0 auto;
+            margin-top:60px;
+        }
+        #table-button{
+            padding:10px 20px;
+            background:none;
+            border:2px solid black;
+            margin-top:20px;
+            border-radius: 10px;
+            cursor:pointer;
+            transition:0.5s all;
+            margin-bottom:50px;
+        }
+        #table-button a{
+            color:#000000;
+            text-decoration: none;
+        }
+        #table-button:hover{
+            transition:0.5s all;
+            background:#135ce4;
+            border-color: #135ce4;
+            color:white;
+        }
+        #table-button:hover a{
+            transition:0.5s all;
+           
+            color:white;
+        }
+        #myChart{
+            width:300px;
+            margin-bottom:50px;
+        }
+        .cab-container{
+            width:70%;
+            padding:40px;
+            margin:0 auto;
+        }
+        .user-info{
+            width:100%;
+            padding: 20px;
+            background:rgb(236, 236, 236);
+            border-radius: 10px;
+            position: relative;
+        }
+        #user-num{
+            color:#135ce4;
+        }
+        #appo{
+            color:rgb(246, 65, 65);
+            text-align: right;
+            position:absolute;
+            right:20px;
+        }
+
+        .user-button{
+            width:100%;
+            display:flex;
+            flex-wrap:wrap;
+        }
+        button{
+            padding:10px 20px;
+            background:none;
+            border:2px solid black;
+            margin:10px;
+            border-radius: 10px;
+            cursor:pointer;
+            transition:0.5s all;
+        }
+        .user-button button:hover{
+
+            transition:0.5s all;
+            background:#135ce4;
+            border-color: #135ce4;
+            color:white;
+        }
+        .chart{
+            width:60%;
+            margin: 0 auto;
+            height:70vh;
+            position:relative;
+        }
+        .table_col {
+        font-family: Arial;
+        font-size: 16px;
+        width: 100%;
+        background: white;
+        text-align: left;
+        border-collapse: collapse;
+        color: #333333;
+        margin: 0 auto;
+
+    }
+    #user{
+        font-size:30px;
+    }
+
+    .table_col th:first-child,
+    .table_col td:first-child {
+        color: #F5F6F6;
+        border-left: none;
+    }
+
+    .table_col th {
+        font-weight: normal;
+        border-bottom: 2px solid #eeaeae;
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 8px 10px;
+    }
+
+    .table_col td {
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 12px 10px;
+        color: #8b8e91;
+    }
+
+    </style>
+
+{% endblock %}

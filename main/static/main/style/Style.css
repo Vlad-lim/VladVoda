@@ -1,0 +1,336 @@
+body{
+    font-family:'Montserrat', sans-serif;
+    font-size:17px;
+    margin:0;
+    background-size: cover;
+    color: rgb(36, 36, 36);
+    overflow-x:hidden;
+    background-color: rgb(246, 246, 246);
+    
+}
+*{
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    }
+
+.container{
+    width:100%;
+    max-width:1920px;
+    margin:0 auto;
+}
+
+/*Header*/
+.Contact-block:hover{
+    padding: 15px;
+    border-radius: 25px;
+    background-color: white;
+    text-align: center;
+    transition: 1s;
+    margin-top: -15px;
+}
+.Contact-block{
+    transition: 1s;
+}
+.Contact-block:hover .Contact-block-element-noVisible{
+    overflow: visible;
+    display: block;
+    transition: 1s;
+}
+.Contact-block-element{
+    margin-top:10px;
+    display: block;
+}
+.Contact-block-element-noVisible{
+    overflow: hidden;
+    display: none;
+    transition: 1s;
+}
+.header{
+    width:100%;
+    max-width: 1700px;
+    margin:0 auto;
+    display: flex;
+    padding:50px;
+    justify-content: space-between;
+}
+.header-nav{
+    width:100%;
+    max-width: 650px;
+    display:flex;
+    margin:10px;
+}
+.Intro-section a{
+   
+    color:#2e2e2e;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:20px;
+    transition:1s;
+    margin:10px;
+}
+
+/*Intro*/
+.Intro-section{
+    background: url("img/Intro_photo.png")
+    center no-repeat;
+    height:100vh;
+    width:100%;
+    padding-right: 50px;
+        
+}
+.logo{
+    margin:0 auto;
+    display: block;
+    animation-duration: 2s;
+    animation-name: logo;
+    margin-top:-100px;
+    pointer-events: none;
+}
+.Intro-text{
+    animation-duration: 3s;
+    animation-name:logo-text;
+    margin-top:-400px;
+    color:#333333;
+    font-size:50px;
+    font-weight: 600;
+    z-index: 9;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;  
+}
+.Intro-text span{
+   
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;  
+    text-shadow: 3px 3px 2px rgb(255, 255, 255);
+}
+.Intro-text p{
+    font-size:150px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+    text-shadow: 3px 3px 2px rgb(255, 255, 255);
+}
+.logo-text{
+    width:100%;
+    max-width: 1200px;
+    margin:0 auto;
+}
+@keyframes logo{
+    from {
+       opacity: 0.5;
+        margin-top: 100px;
+        filter: blur(2px);
+        z-index: 1;
+    }
+
+    
+}
+@keyframes logo-text{
+    0% {
+        opacity: 0;
+        margin-left:-400px;
+    }
+    50% {
+        margin-left:-400px;
+        opacity: 0;
+    }
+    80%{
+        margin-left:0;
+    }
+}
+/*Card-section*/
+.Card-section{
+    width:100%;
+    margin-top: 300px;
+}
+.Card-container{
+    width:100%;
+    margin:0 auto;
+    padding:50px;
+    display: flex;
+    justify-content: space-between;
+}
+.Card{
+    width:320px;
+    height:600px;
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    margin: 0 auto;
+}
+.img{
+    width:100%;
+    height:220px;
+    background-size: cover;
+    background: url("Img/РазработкаСайта.png")
+    content-box no-repeat;
+    transition:1s;
+    border-radius: 15px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+.section-2-tittle{
+    margin:50px;
+}
+.ImgSite{
+    background: url("Img/РазработкаСайта.png");
+}
+.ImgDesign{
+    background: url("Img/Моушн-дизайн.jpg")
+}
+.ImgPhoto{
+    background: url("Img/Обработкафото.jpg")
+}
+.ImgCopy{
+    background: url("Img/Копирайтинг.jpg")
+}
+.Card:hover .img{
+    transition:1s;
+    height:100px;
+}
+.Card:hover .sub-text{
+    opacity: 1;
+    z-index: 2;
+    overflow: visible;
+    transition: 1s;
+}
+.card-text{
+    width:100%;
+    padding: 20px;
+    color:#2e2e2e;
+    font-size:20px;
+}
+.sub-text{
+    opacity:0;
+    z-index:0;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.text-div{
+    padding: 20px;
+}
+/*Atribute-section*/
+.atribute-section{
+    width:100%;
+    
+    margin-top:100px;
+}
+.atribute-container{
+    width:100%;
+    max-width:1800px;
+    margin:0 auto;
+}
+.section-element{
+    display: flex;
+    width:100%;
+    max-width:800px;
+    padding: 20px;
+    margin:0 auto;
+    font-size: 20px;
+}
+
+.atribute-section-tittle{
+    margin:40px;
+}
+
+/*Section-3*/
+.section-3{
+    width:100%;
+}
+hr{
+    height:400px;
+    width:100%;
+    background: url("Img/Блокнот.jpeg") center;
+}
+.section-3-card{
+    width: 100%;
+    max-width: 540px;
+    height:250px;
+    background: rgba(255, 255, 255, 0.445);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    font-size:20px;
+    padding:20px;
+    transition:0.2s;
+    margin:0 auto;
+    margin:10px;
+}
+.section-3-card:hover{
+    margin-top:-50px;
+    transition:0.5s;
+}
+.section-3-container{
+    width:100%;
+    max-width:1380px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top:-200px;
+}
+.section-3-button{
+    width:360px;
+    height:90px;
+    background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);    
+    font-size:20px;
+    text-align: center;
+    border:none;
+    border-radius:15px;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 600;
+    display: block;
+    margin:0 auto;
+    margin-top:200px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.section-3-button:hover{
+    color:white;
+    background: rgb(36, 36, 36);
+    transition: 0.5s;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(29, 29, 29);
+}
+
+/*footer*/
+
+footer{
+    width:100%;
+    
+    background: rgb(226, 226, 226);
+    text-decoration: none;
+    color:rgb(29, 29, 29);
+    margin-top: 300px;
+}
+
+.footer-text{
+    width:100%;
+    max-width:300px;
+}
+.footer-container{
+    width:100%;
+    margin:0 auto;
+    display: flex;
+    padding: 30px;
+}
+.footer-element{
+    padding: 20px;
+}
+.adaptive-logo{
+    opacity: 0;
+    overflow: hidden;
+    position:absolute;
+    z-index: -9;
+}
+.JamboImg{
+    display: block;
+    margin-left: auto;
+    margin-right: 0.6em;
+}

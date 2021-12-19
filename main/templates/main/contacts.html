@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+<div class="text-con">
+    <h1 class='tittl'>Контакты</h1><br>
+    {% for c in Con %}
+    <div class="contact">
+        <h2>{{ c.Pos }}</h2>
+        <h2>{{ c.Contact }}</h2>
+        <div class="contact-container">
+            <span id='contact-info'>{{ c.Name }}</span>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+
+<style>
+.con-icon{
+    max-width: 50px;
+
+}
+.contact-container{
+    display: flex;
+    align-items: center;
+    margin:20px 0px;
+}
+</style>
+
+{% endblock %}

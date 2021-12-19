@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+ 
+        <section class="news">
+            <div class="news-container">
+                
+                
+                {% for News in object_list %}
+                <a href="{% url 'detail' News.id %}">
+                <div class="news-card">
+                    <img width = '100%' src="{{ News.Image.url }}" alt="">
+                    <h1>{{ News.Tittle }}</h1>
+                    <span>{{ News.Anons }}</span>
+                        <br><br>
+                        <strong>{{ News.Published }}</strong>
+                </div>
+            </a>
+            {% endfor %}
+                
+            </div>
+        </section> 
+    
+
+{% endblock %}

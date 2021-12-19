@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+<div class="text-con">
+    <h1 class='tittles'>Вакансии</h1>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#215da7;">
+        </colgroup>
+        <tr>
+            <th>Название должности</th>
+            <th>Требования</th>
+            <th>Обязаности</th>
+            <th>График работы</th>
+            <th>Название структурной единицы</th>
+            <th>Контактная информация</th>
+            <th>Дата размещения вакансии</th>
+        </tr>
+        {% for vak in model %}
+        <tr>
+            <td>{{ vak.Name }}</td>
+            <td>{{ vak.Requaerments }}</td>
+            <td>{{ vak.Respon }}</td>
+            <td>{{ vak.Graphic }}</td>
+            <td>{{ vak.CompanyName }}</td>
+            <td>{{ vak.Contact }}</td>
+            <td>{{ vak.Date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<style>
+    .text-con {
+        overflow-x: scroll;
+    }
+
+    .table_col {
+        font-family: Arial;
+        font-size: 16px;
+        width: 100%;
+        background: white;
+        text-align: left;
+        border-collapse: collapse;
+        color: #333333;
+        margin: 0 auto;
+
+    }
+
+    .table_col th:first-child,
+    .table_col td:first-child {
+        color: #F5F6F6;
+        border-left: none;
+    }
+
+    .table_col th {
+        font-weight: normal;
+        border-bottom: 2px solid #eeaeae;
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 8px 10px;
+    }
+
+    .table_col td {
+        border-right: 20px solid white;
+        border-left: 20px solid white;
+        padding: 12px 10px;
+        color: #8b8e91;
+    }
+</style>
+{% endblock %}

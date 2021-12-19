@@ -1,0 +1,277 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+
+<div class=" swiper swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide">
+            <img src="https://images.pexels.com/photos/371717/pexels-photo-371717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        </div>
+        <div class="swiper-slide slide">
+            <img src="https://images.pexels.com/photos/40784/drops-of-water-water-nature-liquid-40784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        </div>
+        <div class="swiper-slide slide">
+            <img src="https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<section class="service">
+    <div class="service-container">
+        <div class="service-flex">
+        <div class="service-card">
+            <a href="{% url 'vak' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/Вакансии.png' %}"/><br>
+            </div>
+            Вакансии
+        </a>
+        </div>
+    
+        <hr height = 100%>
+        
+        <div class="service-card">
+            <a href="{% url 'water' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/КачествоВоды.png' %}"/><br>
+
+            </div>
+            Качество воды
+        </a>
+        </div>
+  
+        <hr height = 100%>
+
+        <div class="service-card">
+            <a href="{% url 'faq' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/Faq.png' %}"/><br>
+            </div>
+            Вопрос-ответ
+        </a>
+        </div>
+        <hr height = 100%>
+
+        <div class="service-card">
+            <a href='{% url "dolg" %}'>
+            <div class="service-circle">
+                <img src="{% static 'main/img/РаботаСДолжниками.png' %}"/><br>
+            </div>
+            Работа с должниками
+        </a>
+        </div>
+        <hr height = 100%>
+    </div>
+
+
+    <div class="vak">
+        
+            <span>
+            Срочно требуется электромонтер!
+            Более детальная информаци по</span> телефону:(062) 306 47 75; Пн- Пт 
+            с 08.00 до 16.30
+        
+        <img src="https://github.com/Vlad-lim/VodaDonbassa/blob/main/img/%D1%80%D1%83%D0%BF%D0%BE%D1%80.png?raw=true" alt="">
+    </div>
+
+<br><br>
+
+    <div class="service-flex">
+        <div class="service-card">
+            <a href="{% url 'electron' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/ЭлектронаяПриёмная.png' %}"/><br>
+            </div>
+            Электронная приёмная
+        </a>
+        </div>
+        <hr height = 100%>
+
+        <div class="service-card">
+            <a href=" {% url 'online' %} ">
+            <div class="service-circle">
+                <img src="{% static 'main/img/ОнлайнЗаявка.png' %}"/><br>
+            </div>
+            Онлайн-заявка
+        </a>
+        </div>
+        <hr height = 100%>
+
+        <div class="service-card">
+            <a href="{% url 'appoit' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/Запись.png' %}"/><br>
+            </div>
+            Запись на приём
+        </a>
+        </div>
+        <hr height = 100%>
+
+        <div class="service-card">
+            <a href="{% url 'tarr' %}">
+            <div class="service-circle">
+                <img src="{% static 'main/img/Тарифы.png' %}"/><br>
+            </div>
+           Тарифы
+        </a>
+        </div>
+        <hr height = 100%>
+    </div>
+    </div>
+    
+</section>
+
+
+
+<section class="podrazdel">
+    <h1 id = 'pod-tittle'>Структура предприятия</h1>
+    <div class="podrazdel-container">
+        <a href="{% url 'don' %}">
+        <div class="podrazdel-card">
+            <div class="div"><img src="{% static 'main/img/Донецк.jpg' %}" alt=""></div>
+            <h1>ПУ<br> "Донецкводоканал"</h1>
+        </div></a>
+
+        <a href="{% url 'asin' %}">
+        <div class="podrazdel-card">
+            <div class="div"><img src="{% static 'main/img/Ясиноватая.jpg' %}" alt=""></div>
+            <h1>ПУ "Ясиноватаяводоканал"</h1>
+        </div></a>
+
+        <a href="{% url 'zug' %}">
+        <div class="podrazdel-card">
+            <div class="div"><img src="{% static 'main/img/Зугрэс.jpg' %}" alt=""></div>
+            <h1>ПУ <br> "Зугрэсводоканал"</h1>
+        </div></a>
+    </div>
+</section>
+
+<section class="news">
+    <div class="news-container">
+        {% for new in news %}
+        <a href="{% url 'detail' new.id %}">
+        <div class="news-card">
+            <img width = '100%' src="{{ new.Image.url }}" alt="">
+            <h1>{{ new.Tittle }}</h1>
+            <span>{{ new.Anons }}</span>
+                <br><br>
+                <strong>{{ new.Published }}</strong>
+        </div>
+    </a>
+        {% endfor %}
+
+        
+    </div>
+    <button id = 'table-button'><a href="{% url 'news' %}">Архив</a></button>
+</section>
+
+<br><br><br>
+
+<div class="plan-container">
+    <div class="plan-item">
+        <h1>Ремонтные работы</h1>
+        <a href="{% url 'plan' %}">
+        <img src="{% static 'main/img/Шестеренка.png' %}" alt="">
+        </a>
+    </div>
+
+    <div class="plan-item">
+        <h1>Календарь</h1>
+        <form method = 'get' action="{% url 'date' %}">
+            <input name = 'd' class = 'date' placeholder="Ввеите дату" type="date">
+            <button class = 'button' type="submit" >Найти</button>
+                </form>
+    </div>
+</div>
+
+<div class="abonent-text-container">
+    <div>
+        <h2>Уважаемые потребители!</h2>
+        <span>Комфортные условия проживания — это своевременная оплата услуг водоснабжения и водоотведения.</span>
+    </div>
+
+</div>
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<script>
+     new Swiper('.swiper', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            speed: 800,
+        });
+</script>
+
+<style>
+    .vak{
+        padding:40px 20px;
+    }
+    .date{
+        color:#1860a9;
+        font-size:30px;
+        border:2px solid #1860a9;
+        padding: 10px;
+        border-radius:15px;
+    }
+    .podrazdel-container a{
+        color:black;
+        text-decoration: none;
+    }
+    #pod-tittle{
+        color:#1860a9;
+        font-size:50px;
+        text-align:center;
+    }
+    #table-button{
+            padding:10px 20px;
+            background:none;
+            border:2px solid black;
+            margin-top:20px;
+            border-radius: 10px;
+            cursor:pointer;
+            transition:0.5s all;
+            margin-bottom:50px;
+            display:block;
+            margin:0 auto;
+            margin-top:100px;
+            font-size:30px;
+        }
+        #table-button a{
+            color:#000000;
+            text-decoration: none;
+        }
+        #table-button:hover{
+            transition:0.5s all;
+            background:#135ce4;
+            border-color: #135ce4;
+            color:white;
+        }
+        #table-button:hover a{
+            transition:0.5s all;
+            color:white;
+        }
+</style>
+{% endblock %}

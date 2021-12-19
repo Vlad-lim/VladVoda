@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content="width=device-width">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="icon" href="{% static 'main/img/favicon-logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main/styleS.css' %}">
+    <title>Вода донбасса</title>
+</head>
+<body>
+     <section id = 'hidden-menu' class = 'hidden-menuH'>
+        <div class="menu">
+            <img id = 'close-button' src="https://img.icons8.com/ios/96/000000/multiply.png"/>
+            <h1>Внимание!</h1>
+            <span>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.
+    
+                По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.</span>
+        </div>
+    </section>
+    
+    <nav class='nav'>
+
+
+        <div class="run-string">
+            <span>Какой-то текст в бегущей строке Какой-то текст в бегущей строке Какой-то текст в
+                бегущей!!!!!!!!!!!
+                Какой-то текст в бегущей строке Какой-то текст в бегущей строке Какой-то текст в
+                бегущей!!!!!!!!!!!
+                Какой-то текст в бегущей строке Какой-то текст в бегущей строке Какой-то текст в
+                бегущей!!!!!!!!!!! </span>
+        </div>
+
+        <div class="social">
+            <a href=""><img src="https://img.icons8.com/color/48/000000/instagram-new.png"/></a>
+            <a href=""><img src="https://img.icons8.com/color/48/000000/vk-com.png"/></a>
+            <a href=""><img src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
+            <a href=""><img src="https://img.icons8.com/color/48/000000/telegram-app--v1.png"/></a>
+        </div>
+
+        <form method = 'get' action="{% url 'search_results' %}">
+            <input name = 'q' class = 'search' placeholder="Поиск" type="text">
+                </form>
+
+
+    </nav>
+
+    <img class = 'burger-button' width = 50px id = 'burger-button' src="https://img.icons8.com/ios-glyphs/90/000000/menu--v1.png"/>
+    <div id = 'burger-menu' class="burger-menuH">
+        <div class="link-container">
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <a href="">Lorem</a><br><br>
+        <img id = 'close' src="https://img.icons8.com/fluency-systems-regular/96/000000/close-window.png"/>
+    </div>
+    </div>
+    
+    <div id="all">
+
+        <section class = 'header'>
+            <div class="container">
+                <a href="/">
+            <img width= '300px' src="{% static 'main/img/Logo.png' %}" alt="">
+            </a>
+            <div class="header-tittle">
+        Государственное унитарное предприятие<br>
+        Донецкой народной республики<br>
+        Вода ДОНБасса<br>
+        <br><br>
+        <span class = 'sub-tittle'>
+            Вода даёт жизнь и энергию-мы доставляем ее вам
+        </span>
+            </div>
+    
+            <div class="header-service">
+                <img width='200px' src="{% static 'main/img/Disp.png' %}" alt=""><br>
+                Диспетчерская <br>
+                <strong id = 'number'>+7(918) 377 39 61</strong>
+            </div>
+    
+            <div class="header-service">
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'cab' %}">
+                    <img width='200px' src="{% static 'main/img/Cab.png' %}" alt="">
+                </a>
+                    {% else %}
+                    <a href="{% url 'login' %}">
+                        <img width='200px' src="{% static 'main/img/Cab.png' %}" alt="">
+                    </a>
+                    {% endif %}
+                    <a href="{% url 'login' %}">
+            </a>
+                <br>
+                Личный кабинеты
+                
+            </div>
+    
+            <div class="header-service">
+                <a href="{% url 'activehuman' %}">
+                <img height='200px' src="{% static 'main/img/Active.png' %}" alt="">
+            </a>
+                <br>
+                Активный гражданин
+                
+            </div>
+        </div>
+        </section>
+
+        <nav class = 'dws-menu'>
+            <ul>
+                <li><a id = 'ferst-nav' href="/about">О предприятии <img src="https://img.icons8.com/ios-glyphs/30/ffffff/expand-arrow--v1.png"/></a>
+                    <div class="dws-sub-menu">
+                        <div class="dws-sub-menu-container">
+                            <ul>
+                                <li><a href="/about/O_predpriyatii/Nasha_istorya">Наша история</li></a>
+                                <li><a href="/about/O_predpriyatii/Structura_predpriyatia">Структура предприятия</li></a>
+                                <li><a href="/about/O_predpriyatii/Rascritie_informacii">Раскрытие информации</li></a>
+                                <li><a id='subsub'  href="#">Наши подразделения <img src="https://img.icons8.com/ios-glyphs/30/ffffff/forward.png"/></a>
+                                    <div class="dws-sub-menu sub">
+                                        <div class="dws-sub-menu-container">
+                                            <ul>
+                                                <li><a href="">Химико-бактериологическая лаборатория(ХБЛ)</li></a>
+                                                <li><a href="">Центральная аварийная диспетчерская служба</li></a>
+                                                <li><a href="">Отдел автоматизированных систем управления технологическим процессом(АСУТП)</li></a>
+                                                <li><a href="">Автотранспортная служба</li></a>
+                                                
+                                                
+                                            </ul>
+                                </li>
+                                <li><a href="/about/O_predpriyatii/Ecologichescaya_politica">Экологическая политика</li></a>
+                                
+                            </ul>
+                </li>
+                <li><a id = 'ferst-nav' href="/about/O_predpriyatii/Rukovodstvo">Руководство <img src="https://img.icons8.com/ios-glyphs/30/ffffff/expand-arrow--v1.png"/></a>
+                    <div class="dws-sub-menu dws-th">
+                        <div class="dws-sub-menu-container">
+                            <ul>
+                                <li><a href="{% url 'graph' %}">График приёма</li></a>
+                            </ul>
+                </li>
+                <li><a href="{% url 'doc' %}">Нормативные документы</li></a>
+                <li><a href="{% url 'contact' %}">Контакты</li></a>
+                <li><a id = 'ferst-nav' href="#">Потребителям <img src="https://img.icons8.com/ios-glyphs/30/ffffff/expand-arrow--v1.png"/></a>
+                    <div class="dws-sub-menu dws-sec">
+                        <div class="dws-sub-menu-container">
+                            <ul>
+                                <li><a href="{% url 'abon' %}">физическим  лицам</li></a>
+                                <li><a href="">Юридическим  лицам</li></a>
+                            </ul>
+                </li>
+            </ul>  
+               
+        </nav> <br><br><br>
+        {% block content %}
+        {% endblock %}
+    
+        <footer>
+            <div class="footer-container">
+                <div class="footer-card">
+                    <h3>О компании</h3>
+                    <a href="/about">Компания</a>
+                    <a href="/about/O_predpriyatii/Rukovodstvo">Руководство</a>
+                    <a href="{% url 'vak' %}">Вакансии</a>
+                    <a href="/about/O_predpriyatii/Nasha_istorya">Наша история</a>
+                </div>
+        
+                <div class="footer-card">
+                    <h3>Новости</h3>
+                    <a href="{% url 'news' %}">Новости</a>
+                   
+                </div>
+        
+                <div class="footer-card">
+                    <h3>Абобенту</h3>
+                    <a href="{% url 'abon' %}">физическим лицам</a>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'cab' %}">Личный кабинет</a>
+                        {% else %}
+                        <a href="{% url 'login' %}">
+                            Личный кабинет
+                        </a>
+                        {% endif %}
+                    <a href="{% url 'tarr' %}">Тарифы</a>
+                    <a href="{% url 'faq' %}">Ответы на часто задаваемые вопросы</a>
+                    <a href="#">Работа с задолжностями</a>
+                    <a href="{% url 'activehuman' %}">Активный гражданин</a>
+                    <a href="{% url 'online' %}">Онлайн заявка</a>
+                    
+                    <a href="{% url 'doc' %}">Нормативные документы</a>
+                </div>
+        
+                
+        
+                <div class="footer-card">
+                    <h3>Контакты</h3>
+                    <a href="{% url 'contact' %}">Контакты</a>
+                    <a href="{% url 'electron' %}">Электронная приёмная</a>
+                </div>
+        
+                
+            </div>
+        </footer>
+        
+        <div class="carta">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0e44cb87ca5c6cf155b96101bd2dee561df0062d220353e405e43acb7fdee8ef&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
+        </div>
+        
+        
+        <div class="podval">
+        
+        
+            <div class="podval-container">
+                <div>
+                    <span>ГОСУДАРСТВЕННОЕ УНИТАРНОЕ ПРЕДПРИЯТИЕ <br><br>
+         
+                        Донецкой Народной Республики «ВОДА ДОНБАССА»
+                        </span>
+                        <br><br><br>
+                        <span>Адрес: ДНР, 83114, город Донецк, Киевский район, улица Щорса, дом 110</span>
+                        <br><br>
+                        <span>Телефон:    (062) 305 74 66</span>
+                        <br><br>
+                        <span>Email: vodadonbassa@vodadonbassa.ru</span>
+                </div>
+               
+                <div id = 'dis'>
+                    <span>Круглосуточная диспетчерская служба
+                        </span>
+                        <br><br><br>
+                        <span> 1580</span>
+                        <br><br>
+                        <span>(062) 257 45 06</span>
+                        <br><br>
+                        <span>(062) 257 69 63</span>
+                        <br><br>
+                        <span>(071) 314 72 48</span>
+                        <br><br>
+                        <span>(071) 346 77 60</span>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="end">
+            <hr><br>
+            Все права защищены АО "Водоканал" © 2021
+        </div>
+        
+            <script>
+                const hiddenMenu = document.getElementById('hidden-menu');
+                const closeButton = document.getElementById('close-button');
+        
+                closeButton.onclick = closeMenuFunction;
+        
+                function closeMenuFunction(){
+                    hiddenMenu.classList.remove('hidden-menu');
+                    hiddenMenu.classList.add('hidden-menuH');
+                }
+                setTimeout(function(){
+        
+                     hiddenMenu.classList.remove('hidden-menuH');
+                     hiddenMenu.classList.add('hidden-menu');
+                     
+                     }, 30000);
+        
+        
+                const open = document.getElementById('burger-button');
+                const close = document.getElementById('close');
+                const panel = document.getElementById('burger-menu');
+                const all = document.getElementById('all');
+                
+        
+                open.onclick = getpanel;
+                close.onclick = closepanel;
+        
+                function getpanel() {
+                    open.classList.add('burger-buttonH');
+                    open.classList.remove('burger-button');
+                    panel.classList.add('burger-menu');
+                    panel.classList.remove('burger-menuH');
+                    all.classList.add('all');
+                }
+                function closepanel() {
+                    open.classList.add('burger-button');
+                    open.classList.remove('burger-buttonH');
+                    all.classList.remove('all');
+                    panel.classList.add('burger-menuH')
+                    panel.classList.remove('burger-menu');
+        
+                }
+            </script>
+
+<style>
+    .text-con img{
+        width:100%;
+        margin:0 auto;
+    }
+    .text-con{
+    font-size:17px;
+    border-radius: 15px;
+    width:100%;
+    max-width: 50%;
+    padding:40px;
+    margin:0 auto;
+    background-color: whitesmoke;
+}
+    .text-con span{
+        font-size:20px;
+    }
+    .input{
+        width:80%;
+        border:none;
+        border-radius:10px;
+        font-size:18px;
+        padding:10px 20px;
+        margin-top:30px;
+        background:white;
+    }
+    .button{
+        font-size:18px;
+        padding:10px 20px;
+        border:none;
+        border-radius:10px;
+        outline:none;
+        border:none;
+        cursor:pointer;
+        background:white;
+        transition:0.5s;
+        margin: 0 auto;
+        margin-top:30px;
+    }
+    .button:hover{
+        transition:0.5s;
+        background:rgb(236, 236, 236);
+    }
+</style>
+        </body>
+        </html>
